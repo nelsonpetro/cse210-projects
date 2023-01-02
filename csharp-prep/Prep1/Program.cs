@@ -15,7 +15,7 @@ class Program
         //Get the input from the user
         lastName = Console.ReadLine();
         //Print the final sentence
-        Console.WriteLine($"Your name is {char.ToUpper(lastName[0])}{lastName.Substring(1)}, {char.ToUpper(firstName[0])}{firstName.Substring(1)} {char.ToUpper(lastName[0])}{lastName.Substring(1)}.");
+        Console.WriteLine($"Your name is {char.ToUpper(lastName[0])}{lastName.Substring(1).ToLower()}, {char.ToUpper(firstName[0])}{firstName.Substring(1).ToLower()} {char.ToUpper(lastName[0])}{lastName.Substring(1).ToLower()}.");
          
     }
 }
