@@ -7,6 +7,7 @@ class Program
         //Ask te user to enter the grade
         Console.Write("Please, enter the grade: ");
         //Read the grade enter by the user
+        //float is used to handle non-integer percentages
         float grade = float.Parse(Console.ReadLine());
         //Clasify the grade
         //Declare an empty string to store the letter
@@ -62,6 +63,7 @@ class Program
         }
         //Assign and print the final grade
         Console.WriteLine($"Your final grade is: {gradeLetter}{sign}");
+        //If statement to printi if the user passed or not the course
         if (grade >= 70)
         {
             Console.Write("Congratulations! You passed the course!");
