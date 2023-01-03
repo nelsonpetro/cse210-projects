@@ -63,7 +63,7 @@ class Program
         }
         //Assign and print the final grade
         Console.WriteLine($"Your final grade is: {gradeLetter}{sign}");
-        //If statement to printi if the user passed or not the course
+        //If statement to print if the user passed or not the course
         if (grade >= 70)
         {
             Console.Write("Congratulations! You passed the course!");
