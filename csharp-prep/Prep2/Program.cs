@@ -12,9 +12,9 @@ class Program
         //Clasify the grade
         //Declare an empty string to store the letter
         //that correspond to the grade
-        String gradeLetter;
+        string gradeLetter;
         //Declare an empty string to store the sign
-        String sign;
+        string sign;
         //Get the second digit of the grade using
         //the module operator to assign the "-" or "+"
         //to the correspondent letter
