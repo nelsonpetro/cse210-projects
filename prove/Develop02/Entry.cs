@@ -5,9 +5,13 @@ public class Entry
     public string _text;
     public string _date;
     public string _prompt;
-    public void GenerateEntry()
+    public List<string> GenerateEntry()
     {
-        string entryToLine = _date + "-"+_prompt + "\n"+ _text;
-        Console.Write($"{entryToLine}");
+        List<string> _entryValues = new List<string>();
+        _entryValues.Add(_date);
+        _entryValues.Add(_prompt);
+        _entryValues.Add(_text);
+        
+        return _entryValues;
     }
 }
