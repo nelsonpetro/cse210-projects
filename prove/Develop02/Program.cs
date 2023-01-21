@@ -7,8 +7,8 @@ class Program
     {   
         Console.Clear();
         ManageDB connection = new ManageDB();
-        connection.createConnection();
-        connection.createTempConnection();
+        connection.CreateConnection();
+        connection.CreateTempConnection();
         Prompts randomPromt = new Prompts();
         int choice = 1;
         do

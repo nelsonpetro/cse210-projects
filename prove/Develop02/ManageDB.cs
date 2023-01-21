@@ -3,10 +3,10 @@ using Microsoft.Data.Sqlite;
 
 public class ManageDB
 {
-    string connectionString = @"Data Source=Journals.db";
-    public void createConnection()
+    string _connectionString = @"Data Source=Journals.db";
+    public void CreateConnection()
     {
-        using (var connection = new SqliteConnection(connectionString))
+        using (var connection = new SqliteConnection(_connectionString))
         {
             connection.Open();
             var tableCmd = connection.CreateCommand();
@@ -23,9 +23,9 @@ public class ManageDB
         }
     }
 
-    public void createTempConnection()
+    public void CreateTempConnection()
     {
-        using (var connection = new SqliteConnection(connectionString))
+        using (var connection = new SqliteConnection(_connectionString))
         {
             connection.Open();
             var tableCmd = connection.CreateCommand();
@@ -45,7 +45,7 @@ public class ManageDB
         string date = valuesList[0];
         string prompt = valuesList[1];
         string content = valuesList[2];
-        using (var connection = new SqliteConnection(connectionString))
+        using (var connection = new SqliteConnection(_connectionString))
         {
             connection.Open();
             var tableCmd = connection.CreateCommand();
@@ -59,7 +59,7 @@ public class ManageDB
 
     public void GetRecords()
     {   
-        using (var connection = new SqliteConnection(connectionString))
+        using (var connection = new SqliteConnection(_connectionString))
         {
             connection.Open();
             var tableCmd = connection.CreateCommand();
@@ -97,7 +97,7 @@ public class ManageDB
 
     public void GetAllRecords()
     {   
-        using (var connection = new SqliteConnection(connectionString))
+        using (var connection = new SqliteConnection(_connectionString))
         {
             connection.Open();
             var tableCmd = connection.CreateCommand();
@@ -134,7 +134,7 @@ public class ManageDB
     }
 
     public void SaveEntries(){
-        using (var connection = new SqliteConnection(connectionString))
+        using (var connection = new SqliteConnection(_connectionString))
         {
             connection.Open();
             var tableCmd = connection.CreateCommand();
@@ -152,7 +152,7 @@ public class ManageDB
 
     public void DiscardEntries()
     {
-        using (var connection = new SqliteConnection(connectionString))
+        using (var connection = new SqliteConnection(_connectionString))
         {
             connection.Open();
             var tableCmd = connection.CreateCommand();
@@ -165,7 +165,7 @@ public class ManageDB
 
     public void DeleteEspEntry(int target)
     {
-        using (var connection = new SqliteConnection(connectionString))
+        using (var connection = new SqliteConnection(_connectionString))
         {
             connection.Open();
             var tableCmd = connection.CreateCommand();
@@ -178,7 +178,7 @@ public class ManageDB
 
     public void DeleteAllEntries()
     {
-        using (var connection = new SqliteConnection(connectionString))
+        using (var connection = new SqliteConnection(_connectionString))
         {
             connection.Open();
             var tableCmd = connection.CreateCommand();
