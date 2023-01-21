@@ -88,7 +88,7 @@ public class ManageDB
             Console.WriteLine("----------------------------------------\n");
             foreach(var row in tableData)
             {
-                Console.WriteLine($"Entry #{row.id} - Date: {row.date} - Prompt: {row.prompt}\n{row.entry}");
+                Console.WriteLine($"Entry #{row.id} - Date: {row.date} - Prompt: {row.prompt}\n{row.entry}\n");
             }
             Console.WriteLine("----------------------------------------\n");
             
@@ -127,7 +127,7 @@ public class ManageDB
             Console.WriteLine("----------------------------------------\n");
             foreach(var row in tableData)
             {
-                Console.WriteLine($"Entry #{row.id} - Date: {row.date} - Prompt: {row.prompt}\n{row.entry}");
+                Console.WriteLine($"Entry #{row.id} - Date: {row.date} - Prompt: {row.prompt}\n{row.entry}\n");
             }
             Console.WriteLine("----------------------------------------\n");
         }
