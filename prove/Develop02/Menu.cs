@@ -5,7 +5,7 @@ public class Menu
     public void DisplayMenu()
     {
         Console.WriteLine("Please select one of the following choices: ");
-        List<string> options = new List<string>()
+        List<string> _options = new List<string>()
         {
             "Write",
             "Display current entries",
@@ -16,9 +16,9 @@ public class Menu
             "Delete all entries",
             "Quit"
         };
-        foreach(string option in options)
+        foreach(string _option in _options)
         {
-            Console.WriteLine($"{options.IndexOf(option) + 1}. {option}");
+            Console.WriteLine($"{_options.IndexOf(_option) + 1}. {_option}");
         }
         Console.Write("What would you like to do?: ");
     }
