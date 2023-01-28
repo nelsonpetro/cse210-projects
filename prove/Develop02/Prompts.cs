@@ -35,7 +35,7 @@ public class Prompts
         }
         else
         {
-            Console.Write("There are nor more prompts for today!");
+            Console.Write("There are not more prompts for today!");
         }
         return _prompt;
     } 
