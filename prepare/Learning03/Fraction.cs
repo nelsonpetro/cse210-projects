@@ -2,8 +2,8 @@ using System;
 
 public class Fraction
 {
-    int _top;
-    int _bottom;
+    private int _top;
+    private int _bottom;
     public Fraction()
     {
         _top = 1;
