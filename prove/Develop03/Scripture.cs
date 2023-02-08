@@ -59,7 +59,7 @@ public class Scripture
         }
     }
 
-    public void DisplayList()
+    public void DisplayRenderedText()
     {
         if (_reference.GetEndVerse() == "")
         {

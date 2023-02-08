@@ -13,7 +13,7 @@ class Program
         Console.Clear();
         while (true)
         {
-            scripture.DisplayList();
+            scripture.DisplayRenderedText();
             Console.Write("\n\nPress enter to hide a word or type quit to exit:");
             string userInput = Console.ReadLine();
             if (userInput.ToLower() == "quit")
@@ -26,7 +26,7 @@ class Program
                 scripture.HideWords();
                 if (!scripture.AllWordsHidden())
                 {
-                    scripture.DisplayList();
+                    scripture.DisplayRenderedText();
                     Console.WriteLine("\n\nAll words have been hidden!");
                     break;
                 }
