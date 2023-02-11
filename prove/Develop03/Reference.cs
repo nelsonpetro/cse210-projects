@@ -3,22 +3,32 @@ using System;
 public class Reference
 {
     private string _book;
+
     private string _chapter;
+
     private string _initialVerse;
+
     private string _endVerse;
+    
     public Reference()
     {
         _book = "";
+
         _chapter = "";
+
         _initialVerse = "";
+
         _endVerse = "";
     }
     
     public Reference(string book, string chapter, string initialVerse, string endVerse)
     {
         _book = book;
+
         _chapter = chapter;
+
         _initialVerse = initialVerse;
+
         _endVerse = endVerse;
     }
     

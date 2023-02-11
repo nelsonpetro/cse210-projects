@@ -36,7 +36,9 @@ public class Scripture
     public void HideWords()
     {
         Random rnd = new Random();
+
         int number = rnd.Next(2,4);
+
         if (number > _availableIndex.Count && _availableIndex.Count > 0)
         {
             number = _availableIndex.Count;
@@ -44,8 +46,11 @@ public class Scripture
         for (int i = 0; i < number; i++)
         {
             int rndindex = rnd.Next(_availableIndex.Count);
+
             int index = _availableIndex[rndindex];
+
             _availableIndex.RemoveAt(rndindex);
+
             _wordsList[index].Hide();
         }        
     }  
@@ -55,6 +60,7 @@ public class Scripture
         foreach(string word in _text.Split(" "))
         {
             Word words = new Word(word);
+
             _wordsList.Add(words);
         }
     }
@@ -78,6 +84,7 @@ public class Scripture
     public bool AllWordsHidden()
     {
         _allWordsHidden = _wordsList.Any(word => word.GetHiddenValue() == false);
+        
         return _allWordsHidden;
     } 
 }
