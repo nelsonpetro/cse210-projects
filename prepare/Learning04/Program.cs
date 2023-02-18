@@ -25,7 +25,6 @@ class Program
                 MathAssignment mathAssignment = new MathAssignment(name, topic, textBookSection, problems);
                 Console.WriteLine(mathAssignment.GetSummary());
                 Console.Write(mathAssignment.GetHomeworkList());
-
                 break;
 
             case 2:
