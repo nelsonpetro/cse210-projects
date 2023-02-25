@@ -32,20 +32,30 @@ public class Listing : Activity
 
     public void DisplayQuestions()
     {
-        Random rnd = new Random();
-        int rndindex = rnd.Next(_availableIndex.Count);
-        int index = _availableIndex[rndindex];
+        if (_availableIndex.Count != 0)
+        {
+            Random rnd = new Random();
+            int rndindex = rnd.Next(_availableIndex.Count);
+            int index = _availableIndex[rndindex];
 
-        Console.WriteLine("List as many responses you can to the following prompt: ");
-        Console.Write($"--- {_listingQuestions[index]} ---");
-        _availableIndex.RemoveAt(rndindex);
+            Console.WriteLine("List as many responses you can to the following prompt: ");
+            Console.Write($"--- {_listingQuestions[index]} ---");
+            _availableIndex.RemoveAt(rndindex);
+        }
+        else
+        {
+            Console.WriteLine("There are not more questions!");
+            Environment.Exit(1);
+        }
+        
     }
 
     public int GetEntries()
     {
         DateTime start = DateTime.Now;
         DateTime endTime = DateTime.Now.AddSeconds(GetDuration());
-
+        _listedItems = 0;
+        
         while (DateTime.Now < endTime)
         {
             Console.Write("> ");

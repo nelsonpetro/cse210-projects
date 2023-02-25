@@ -29,23 +29,46 @@ public class Reflection : Activity
         "How can you keep this experience in mind in the future?"
     };
 
-    private List<int> _availableIndex = new List<int>();
+    private List<int> _availableIndexPrompts = new List<int>();
 
-    public List<int> PopulateIndexes()
+    private List<int> _availableIndexQuestions = new List<int>();
+
+    public List<int> PopulateIndexesPrompts()
+    {
+        for (int i = 0; i < _prompts.Count; i++)
+        {
+            _availableIndexPrompts.Add(i);
+        }
+        return _availableIndexPrompts;
+    }
+
+    public List<int> PopulateIndexesQuestions()
     {
         for (int i = 0; i < _questions.Count; i++)
         {
-            _availableIndex.Add(i);
+            _availableIndexQuestions.Add(i);
         }
-        return _availableIndex;
+        return _availableIndexQuestions;
     }
 
     public void DisplayPrompt()
     {
-        Console.WriteLine("Consider the following prompt: \n");
-        Random rnd = new Random();
-        int randPrompt = rnd.Next(0,_prompts.Count);
-        Console.WriteLine($"--- {_prompts[randPrompt]} ---\n");
+        if (_availableIndexPrompts.Count != 0)
+        {
+            Console.WriteLine("Consider the following prompt: \n");
+
+            Random rnd = new Random();
+            int rndindex = rnd.Next(_availableIndexPrompts.Count);
+            int index = _availableIndexPrompts[rndindex];
+
+            Console.WriteLine($"--- {_prompts[index]} ---\n");
+            _availableIndexPrompts.RemoveAt(rndindex);
+        }
+        else
+        {
+            Console.WriteLine("There are not more prompts!");
+            Environment.Exit(1);
+        }
     }
 
     public void Instructions()
@@ -59,10 +82,10 @@ public class Reflection : Activity
     public void DisplayQuestions()
     {
         Random rnd = new Random();
-        int rndindex = rnd.Next(_availableIndex.Count);
-        int index = _availableIndex[rndindex];
+        int rndindex = rnd.Next(_availableIndexQuestions.Count);
+        int index = _availableIndexQuestions[rndindex];
 
         Console.Write($"> {_questions[index]} ");
-        _availableIndex.RemoveAt(rndindex);
+        _availableIndexQuestions.RemoveAt(rndindex);
     }
 }

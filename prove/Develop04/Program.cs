@@ -21,7 +21,8 @@ class Program
 
         Reflection reflection = new Reflection(options[1].Split(" ")[1], descriptions[1]);
 
-        reflection.PopulateIndexes();
+        reflection.PopulateIndexesPrompts();
+        reflection.PopulateIndexesQuestions();
 
         Listing listing = new Listing(options[2].Split(" ")[1], descriptions[2]);
 
