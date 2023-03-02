@@ -5,33 +5,70 @@ class Program
 {
     static void Main(string[] args)
     {
-        
-        void Inhale()
+        List<Shape> shapes = new List<Shape>();
+
+        List<string> options = new List<string>()
         {
-            DateTime start = DateTime.Now;
-            DateTime endTime = DateTime.Now.AddSeconds(30);
-            
-            void countDown(int seconds)
+            "Square",
+            "Rectangle",
+            "Circle"
+        };
+
+        while (true)
+        {
+            Console.WriteLine("Options:");
+            foreach(string option in options)
             {
-                while(seconds > 0)
-                {
-                    Console.Write($"{seconds}");
-                    System.Threading.Thread.Sleep(1000);
-                    Console.Write("\b \b");
-                    seconds--;
-                }
+                Console.WriteLine($"{options.IndexOf(option)+1}. {option}");
+            }
+            Console.Write("\nPlease, enter the shape: ");
+            
+            int choice = int.Parse(Console.ReadLine());
+
+            Console.Write("\nPlease, enter the color: ");
+            string color = Console.ReadLine();
+
+            switch(choice)
+            {
+                case 1:
+                    Console.Write("Please, enter the length of the side: ");
+                    double side = double.Parse(Console.ReadLine());
+                    Square square = new Square(color, side);
+                    shapes.Add(square);
+                    break;
+                case 2:
+                    Console.Write("Please, enter the length: ");
+                    double length = double.Parse(Console.ReadLine());
+                    Console.Write("Please, enter the width: ");
+                    double width = double.Parse(Console.ReadLine());
+                    Rectangle rectangle = new Rectangle(color, length, width);
+                    shapes.Add(rectangle);
+                    break;
+                case 3:
+                    Console.Write("Please, enter the radius: ");
+                    double radius = double.Parse(Console.ReadLine());
+                    Circle circle = new Circle(color, radius);
+                    break;
+                default:
+                    Console.WriteLine("You entered an invalid option.");
+                    break;
             }
 
-            while(DateTime.Now < endTime)
+            Console.Write("\nPress enter to add another shape, type quit to exit: ");
+            string userInput = Console.ReadLine();
+
+            if (userInput.ToLower() == "quit")
             {
-                Console.Write($"Breathe in...");
-                countDown(4);
-                Console.Write($"\nBreathe out...");
-                countDown(6);
-                Console.WriteLine("\n");
+                break;
             }
         }
 
-        Inhale();
+        foreach (Shape shape in shapes)
+        {
+            string color = shape.GetColor();
+            double area = shape.GetArea();
+
+            Console.WriteLine($"\nThe {color} shape has an area of {area}.");
+        }
     }
 }
