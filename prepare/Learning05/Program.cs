@@ -48,6 +48,7 @@ class Program
                     Console.Write("Please, enter the radius: ");
                     double radius = double.Parse(Console.ReadLine());
                     Circle circle = new Circle(color, radius);
+                    shapes.Add(circle);
                     break;
                 default:
                     Console.WriteLine("You entered an invalid option.");
