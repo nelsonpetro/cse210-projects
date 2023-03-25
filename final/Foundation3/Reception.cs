@@ -9,7 +9,7 @@ public class Reception : Event
 
     public override string ShortDescription()
     {
-        return $"Reception: {GetTitle()}, {GetDate().ToShortDateString()}\n";
+        return $"Reception: {GetTitle()}, Date: {GetDate().ToShortDateString()}\n";
     }
 
     public override string StandardDetails()

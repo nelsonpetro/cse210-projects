@@ -9,12 +9,12 @@ public class OutdoorGathering : Event
 
     public override string ShortDescription()
     {
-        return $"Lecture: {GetTitle()}, {GetDate().ToShortDateString()}\n";
+        return $"Outdoor Gathering: {GetTitle()}, Date: {GetDate().ToShortDateString()}\n";
     }
 
     public override string StandardDetails()
     {
-        return $"Lecture: {Details()}";
+        return $"Outdoor Gathering: {Details()}";
     }
 
     public override string FullDetails()

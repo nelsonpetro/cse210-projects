@@ -11,7 +11,7 @@ public class Lecture : Event
 
     public override string ShortDescription()
     {
-        return $"Lecture: {GetTitle()}, {GetDate().ToShortDateString()}\n";
+        return $"Lecture: {GetTitle()}, Date: {GetDate().ToShortDateString()}\n";
     }
 
     public override string StandardDetails()
