@@ -59,7 +59,7 @@ class Program
             {
                 foreach(Order finalOrder in orders)
                 {
-                    Console.WriteLine($"Order #{orders.IndexOf(finalOrder)+1}\n");
+                    Console.WriteLine($"\nOrder #{orders.IndexOf(finalOrder)+1}\n");
                     Console.WriteLine(finalOrder.PackingLabel());
                     Console.WriteLine(finalOrder.ShippingLabel());
                     Console.WriteLine(finalOrder.TotalCost());
